@@ -81,23 +81,31 @@
             }
             public function getProizvodeID($id)
             {
-                try { $sql = "SELECT * FROM proizvod WHERE id=$id"; 
-                $pdo_izraz = $this->dbh->query($sql);
-                $obj = $pdo_izraz->fetch(PDO::FETCH_ASSOC); 
-                return $obj; } 
+                try { 
+                    $sql = "SELECT * FROM proizvod WHERE id=$id"; 
+                    $pdo_izraz = $this->dbh->query($sql);
+                    $obj = $pdo_izraz->fetch(PDO::FETCH_ASSOC); 
+                    return $obj; 
+                } 
                 catch(PDOException $e) 
-                { echo "GRESKA: "; 
-                echo $e->getMessage(); }
+                { 
+                    echo "GRESKA: "; 
+                    echo $e->getMessage(); 
+                }
             }
             public function getKorisnika($id)
             {
-                try { $sql = "SELECT * FROM korisnik WHERE id=$id"; 
-                $pdo_izraz = $this->dbh->query($sql);
-                $obj = $pdo_izraz->fetch(PDO::FETCH_ASSOC); 
-                return $obj; } 
+                try { 
+                    $sql = "SELECT * FROM korisnik WHERE id=$id"; 
+                    $pdo_izraz = $this->dbh->query($sql);
+                    $obj = $pdo_izraz->fetch(PDO::FETCH_ASSOC); 
+                    return $obj; 
+                } 
                 catch(PDOException $e) 
-                { echo "GRESKA: "; 
-                echo $e->getMessage(); }
+                { 
+                    echo "GRESKA: "; 
+                    echo $e->getMessage(); 
+                }
             }
             public function getAllProizvode()
             {
